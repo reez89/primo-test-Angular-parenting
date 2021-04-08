@@ -7,7 +7,17 @@
   <app-child-two-component
     *ngFor=" let element of testElement"
     [alias-quellochevoglio]="element"
+
   >
+    <p>
+      <strong
+        *ngIf="element.type === 'server'"
+        style="color: red">{{ element.content }}
+      </strong>
+      <em *ngIf="element.type === 'blueprint'"
+          style="color: blue">{{ element.content }}
+      </em>
+    </p>
   </app-child-two-component>
   <!-- A sinistra abbiamo [element] che rappresenta il nome della proprietà nel componente
         Mentre A destra troviamo item, che è il nome dell'iterazione.
