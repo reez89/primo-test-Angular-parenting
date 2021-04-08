@@ -1,2 +1,12 @@
-<p >child-component works!</p>
-<button [title]="">Click here</button>
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Server or blueprints!</p>
+    <label >Server Name</label>
+    <input type="text" class="form-control" [(ngModel)]="newServerName">
+    <label >Server Content</label>
+    <input type="text" class="form-control" [(ngModel)]="newServerContent">
+    <br>
+    <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+    <button class="btn btn-primary" (click)="onAddBlueprint()">Add Blueprint</button>
+  </div>
+</div>

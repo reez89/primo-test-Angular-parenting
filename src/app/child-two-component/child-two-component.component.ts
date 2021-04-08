@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ChildTwoComponentComponent implements OnInit {
 
-  @Input() element : {type: string, name: string, content:string }; /* dichiariamo l'elemento con typescript */
+  @Input('alias-quellochevoglio') element : {type: string, name: string, content:string }; /* dichiariamo l'elemento con typescript */
 
 
   constructor() { }

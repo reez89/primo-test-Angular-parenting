@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit,EventEmitter,Output} from '@angular/core';
 
 @Component({
   selector: 'app-child-component',
@@ -6,11 +6,19 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./child-component.component.css']
 })
 export class ChildComponentComponent implements OnInit {
-  @Input() title: string;
+  @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+  @Output()  blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+  newServerName = '';
+  newServerContent = '';
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
+  onAddServer(){
+    this.serverCreated.emit({serverName: this.newServerName, serverContent:this.newServerContent});
+  }
+  onAddBlueprint(){
+    this.blueprintCreated.emit({serverName: this.newServerName, serverContent:this.newServerContent});
+  }
 }

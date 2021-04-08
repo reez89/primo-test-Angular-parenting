@@ -8,7 +8,20 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  testElement = [{type: 'server', name:'TestElement', content: 'Questa è una  del! '}];
+  testElement = [{type: '', name:'', content: ''}];
 
-
+  onServerAdded (serverData : {serverName: string, serverContent: string}){
+  this.testElement.push({
+    type: 'server',
+    name: serverData.serverName,
+    content: serverData.serverContent
+  });
+  }
+  onBlueprintAdded (blueprintData : {serverName: string, serverContent: string}){
+  this.testElement.push({
+    type: 'blueprint',
+    name: blueprintData.serverName,
+    content: blueprintData.serverContent
+  });
+  }
 }
