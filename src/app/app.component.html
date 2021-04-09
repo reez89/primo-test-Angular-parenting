@@ -1,15 +1,15 @@
 <h1>Parent</h1>
 <app-child-component
   (serverCreated)="onServerAdded($event)"
-  (blueprintCreated)="onBlueprintAdded($event)" ></app-child-component>
+  (blueprintCreated)="onBlueprintAdded($event)">
+</app-child-component>
 
-<div >
+<div>
   <app-child-two-component
     *ngFor=" let element of testElement"
     [alias-quellochevoglio]="element"
-
   >
-    <p>
+    <p #paragraphName>
       <strong
         *ngIf="element.type === 'server'"
         style="color: red">{{ element.content }}
